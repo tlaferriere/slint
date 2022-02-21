@@ -314,7 +314,7 @@ struct RoundedRectangle {
 fn prepare_scene(
     runtime_window: Rc<i_slint_core::window::Window>,
     size: PhysicalSize,
-    devices: &dyn Devices,
+    devices: &mut dyn Devices,
     initial_dirty_region: i_slint_core::item_rendering::DirtyRegion,
     cache: &mut PartialRenderingCache,
 ) -> Scene {
