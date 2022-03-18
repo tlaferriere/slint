@@ -159,6 +159,10 @@ impl<Display: Devices, IRQ: InputPin, CS: OutputPin<Error = IRQ::Error>, SPI: Tr
     fn time(&self) -> core::time::Duration {
         core::time::Duration::from_micros(self.timer.get_counter())
     }
+
+    fn flush_frame(&mut self) {
+        self.debug(&alloc::format!("{} - {}", ALLOCATOR.used(), ALLOCATOR.free()));
+    }
 }
 
 mod xpt2046 {

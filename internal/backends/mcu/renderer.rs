@@ -95,6 +95,7 @@ pub fn render_window_frame(
     line_processing_profiler.stop_profiling(devices, "line processing");
     span_drawing_profiler.stop_profiling(devices, "span drawing");
     screen_fill_profiler.stop_profiling(devices, "screen fill");
+    devices.flush_frame();
 }
 
 struct Scene {

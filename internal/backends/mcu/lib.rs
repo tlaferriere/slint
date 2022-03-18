@@ -40,10 +40,11 @@ pub type TargetPixel = embedded_graphics::pixelcolor::Rgb565;
 pub trait Devices {
     fn screen_size(&self) -> PhysicalSize;
     fn fill_region(&mut self, region: PhysicalRect, pixels: &[TargetPixel]);
+    fn flush_frame(&mut self) {}
     fn read_touch_event(&mut self) -> Option<i_slint_core::input::MouseEvent> {
         None
     }
-    fn debug(&mut self, _: &str);
+    fn debug(&mut self, _: &str) {}
     fn time(&self) -> core::time::Duration {
         core::time::Duration::ZERO
     }
