@@ -78,6 +78,9 @@ default-members = [
 
 resolver="2"
 
+[patch.crates-io]
+femtovg = { git = "https://github.com/slint-ui/femtovg", branch = "simon/gl-perf-tweaks" }
+
 [profile.release]
 lto = true
 panic = "abort"
